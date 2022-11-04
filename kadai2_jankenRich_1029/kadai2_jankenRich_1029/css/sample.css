@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif;   
+    margin:auto;
+    padding:0;
+    text-align:center;
+    width: 900px;
+    background-color:#666;
+}
+header{
+    background-color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+} 
+
+li{
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: #FFF;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: rgb(22, 169, 236);
+    color:#fff;
+} 
+
+#judgment{
+    font-size: 3.0rem;
+}
+
+
+
+.footer{
+    padding: 10px 0;
+    background-color: rgb(22, 169, 236);
+    margin: 60px 0 0 ;
+}
+
+.copyrights{
+    color: #fff;
+}
+
+.wincount p{
+    font-size: 3rem;
+}
+
+.losecount p{
+    font-size: 3rem;
+}
+
+.count{
+    display:flex;
+    margin:0 auto;
+    justify-content: center;
+    
+}

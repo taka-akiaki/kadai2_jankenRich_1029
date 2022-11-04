@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="img/main.jpg"  alt="メイン画像">
+        <h1>来週もまた見てくださいね！<br>じゃんけんポン</h1>
+    </header>
+
+    <main>
+        <ul>
+            
+            <li id="gu_btn"><img src="img/janken_gu.png" width="150" height="100" alt="グー"></li>
+            <audio src="audio/audio_gu.m4a" id="otogu"></audio>
+            
+           
+            <li id="cho_btn"><img src="img/janken_choki.png" width="150" height="100" alt="チョキ"></li>
+            <audio src="audio/audio_cho.m4a" id="otocho"></audio>
+           
+           
+            <li id="par_btn"><img src="img/janken_pa.png" width="150" height="100" alt="パー"></li>
+            <audio src="audio/audio_pa.m4a" id="otopa"></audio>
+            
+        </ul>
+        <div><span id="pc_hands"><img src="img/sabu.jpg" alt="サブ画像"></span></div>
+        <div id="judgment">来週の運勢は？</div>
+
+        <div class="count">
+            <div class="wincount">
+                <p id="win"> 0勝</p>
+            </div>
+            <div class="losecount">
+                <p id="lose">0負</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="footer">
+        <small class="copyrights">良い1週間を！</small>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+// //  -------------------------
+// じゃんけんの表示部分
+// // -------------------------
+
+    let win=0;
+    let lose=0;
+
+
+
+        $("#gu_btn").on("click", function(){
+            var random = Math.floor(Math.random() * 3);
+            console.log(random, "ランダムな数字");
+            $("#otogu").get(0).play();
+
+            let view="";
+            var kekka="";
+
+                if (random == 0) {    
+                    view='<img src="img/sazaegu.jpg" width="259" height="194" alt="gu">';
+                } else if (random == 1) {
+                    view='<img src="img/sazaecho.jpg" width="250" height="194" alt="gu">';
+                } else if (random == 2) {
+                    view='<img src="img/sazaepar.jpg" width="250" height="194" alt="gu">';
+                }
+
+                $("#pc_hands").html(view);
+
+                if (random == 0) {    
+                    kekka='あいこです。もう1度選んでね！！';
+                } else if (random == 1) {
+                    kekka='WIN<br>良い1週間になります！';
+                    win+=1;
+                } else if (random == 2) {
+                    kekka='LOSE<br>この1週間気をつけてね！';
+                    lose+=1;
+                }
+
+                
+
+                $("#judgment").html(kekka);
+                $("#win").html(win+"勝");
+                $("#lose").html(lose+"負");  
+                $("#judgment").fadeOut(kekka);
+                $("#judgment").fadeIn(kekka);
+             
+        })
+
+        $("#cho_btn").on("click", function(){
+            var random = Math.floor(Math.random() * 3);
+            console.log(random, "ランダムな数字");
+            $("#otocho").get(0).play();
+
+            let view="";
+
+                if (random == 0) {    
+                        view='<img src="img/sazaegu.jpg" width="259" height="194" alt="gu">';
+                    } else if (random == 1) {
+                        view='<img src="img/sazaecho.jpg" width="259" height="194" alt="gu">';
+                    } else if (random == 2) {
+                        view='<img src="img/sazaepar.jpg" width="259" height="194" alt="gu">';
+                    }
+
+                $("#pc_hands").html(view);
+
+                if (random == 0) {    
+                    kekka='LOSE<br>この1週間気をつけてね！';
+                    lose+=1;
+                } else if (random == 1) {
+                    kekka='あいこです。もう1度選んでね！！';
+                } else if (random == 2) {
+                    kekka='WIN<br>良い1週間になります！';
+                    win+=1;
+                }
+
+                $("#judgment").html(kekka);
+                $("#win").html(win+"勝");
+                $("#lose").html(lose+"負");  
+
+        })
+
+        $("#par_btn").on("click", function(){
+            var random = Math.floor(Math.random() * 3);
+            console.log(random, "ランダムな数字");
+            $("#otopa").get(0).play();
+
+            let view="";
+
+                if (random == 0) {    
+                        view='<img src="img/sazaegu.jpg" width="259" height="194" alt="gu">';
+                    } else if (random == 1) {
+                        view='<img src="img/sazaecho.jpg" width="259" height="194" alt="gu">';
+                    } else if (random == 2) {
+                        view='<img src="img/sazaepar.jpg" width="259" height="194" alt="gu">';
+                    }
+                    $("#pc_hands").html(view);
+
+                if (random == 0) {    
+                    kekka='WIN<br>良い1週間になります！';
+                    win+=1;
+                } else if (random == 1) {
+                    kekka='LOSE<br>この1週間気をつけてね！';
+                    lose+=1;
+                } else if (random == 2) {
+                    kekka='あいこです。もう1度選んでね！！';
+                }
+
+                $("#judgment").html(kekka);
+                $("#win").html(win+"勝");
+                $("#lose").html(lose+"負");  
+
+        })
+
+      
+       
+
+      
+    </script>
+</body>
+
+</html>
